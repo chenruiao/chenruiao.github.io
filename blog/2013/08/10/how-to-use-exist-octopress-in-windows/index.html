@@ -1,0 +1,333 @@
+
+<!DOCTYPE html>
+<!--[if IEMobile 7 ]><html class="no-js iem7"><![endif]-->
+<!--[if lt IE 9]><html class="no-js lte-ie8"><![endif]-->
+<!--[if (gt IE 8)|(gt IEMobile 7)|!(IEMobile)|!(IE)]><!--><html class="no-js" lang="en"><!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <title>Windows中搭建已存在的Octopress环境 - 冯威的个人博客</title>
+  <meta name="author" content="冯威">
+
+  
+  <meta name="description" content="当我们需要在不同的电脑上来对同一个Octopress博客进行维护的时候就需要针对已存在的Octopress来设置环境了， 安装相应的软件： Git：http://msysgit.googlecode.com/files/Git-1.8.1.2-preview20130201.exe Ruby： &hellip;">
+  
+
+  <!-- http://t.co/dKP3o1e -->
+  <meta name="HandheldFriendly" content="True">
+  <meta name="MobileOptimized" content="320">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  
+  <link rel="canonical" href="http://oec2003.github.io/blog/2013/08/10/how-to-use-exist-octopress-in-windows">
+  <link href="/favicon.png" rel="icon">
+  <link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css">
+  <link href="/atom.xml" rel="alternate" title="冯威的个人博客" type="application/atom+xml">
+  <script src="/javascripts/modernizr-2.0.js"></script>
+  <script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+  <script>!window.jQuery && document.write(unescape('%3Cscript src="./javascripts/lib/jquery.min.js"%3E%3C/script%3E'))</script>
+  <script src="/javascripts/octopress.js" type="text/javascript"></script>
+  <!--Fonts from Google"s Web font directory at http://google.com/webfonts -->
+<link href="http://fonts.googleapis.com/css?family=PT+Serif:regular,italic,bold,bolditalic" rel="stylesheet" type="text/css">
+<link href="http://fonts.googleapis.com/css?family=PT+Sans:regular,italic,bold,bolditalic" rel="stylesheet" type="text/css">
+
+  
+
+</head>
+
+<body   >
+  <header role="banner"><hgroup>
+  <h1><a href="/">冯威的个人博客</a></h1>
+  
+    <h2>临渊羡鱼 不如退而结网.</h2>
+  
+</hgroup>
+
+</header>
+  <nav role="navigation"><ul class="subscription" data-subscription="rss">
+  <li><a href="/atom.xml" rel="subscribe-rss" title="subscribe via RSS">RSS</a></li>
+  
+</ul>
+  
+<form action="http://google.com/search" method="get">
+  <fieldset role="search">
+    <input type="hidden" name="q" value="site:oec2003.github.io" />
+    <input class="search" type="text" name="q" results="0" placeholder="Search"/>
+  </fieldset>
+</form>
+  
+<ul class="main-navigation">
+  <li><a href="/">首页</a></li>
+  <li><a href="/blog/archives">归档</a></li>
+  <li><a href="/about">关于</a></li>
+</ul>
+
+</nav>
+  <div id="main">
+    <div id="content">
+      <div>
+<article class="hentry" role="article">
+  
+  <header>
+    
+      <h1 class="entry-title">Windows中搭建已存在的Octopress环境</h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2013-08-10T08:54:00+08:00" pubdate data-updated="true">Aug 10<span>th</span>, 2013</time>
+        
+         | <a href="#disqus_thread">Comments</a>
+        
+      </p>
+    
+  </header>
+
+
+<div class="entry-content"><p>当我们需要在不同的电脑上来对同一个Octopress博客进行维护的时候就需要针对已存在的Octopress来设置环境了，</p>
+
+<h2>安装相应的软件：</h2>
+
+<ol>
+<li>Git：<a href="http://msysgit.googlecode.com/files/Git-1.8.1.2-preview20130201.exe">http://msysgit.googlecode.com/files/Git-1.8.1.2-preview20130201.exe </a></li>
+<li>Ruby：<a href="http://files.rubyforge.vm.bytemark.co.uk/rubyinstaller/rubyinstaller-1.9.3-p429.exe">http://files.rubyforge.vm.bytemark.co.uk/rubyinstaller/rubyinstaller-1.9.3-p429.exe</a></li>
+<li>DevKit：<a href="http://cloud.github.com/downloads/oneclick/rubyinstaller/DevKit-tdm-32-4.5.2-20111229-1559-sfx.exe">http://cloud.github.com/downloads/oneclick/rubyinstaller/DevKit-tdm-32-4.5.2-20111229-1559-sfx.exe</a></li>
+<li>Python：<a href="http://www.python.org/ftp/python/2.7.5/python-2.7.5.msi">http://www.python.org/ftp/python/2.7.5/python-2.7.5.msi</a></li>
+</ol>
+
+
+<p>关于软件的安装在《<a href="http://www.cnblogs.com/oec2003/archive/2013/05/27/3100896.html">Windows下搭建Octopress博客</a>》中有详细的介绍。</p>
+
+<!--more-->
+
+
+<h2>拉Octopress代码到本地</h2>
+
+<p>使用下面命令将已存在的Octopress代码拉到本地</p>
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>git clone -b source git@github.com:oec2003/oec2003.github.com.git
+</span><span class='line'>git clone  git@github.com:oec2003/oec2003.github.com.git _deploy
+</span></code></pre></td></tr></table></div></figure>
+
+
+<h2>编写文章</h2>
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>cd Octopress
+</span><span class='line'>rake new_post['new post title']
+</span><span class='line'>rake generate
+</span><span class='line'>rake preview
+</span><span class='line'>rake deploy
+</span></code></pre></td></tr></table></div></figure>
+
+
+<h2>推送到github</h2>
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>cd Octopress
+</span><span class='line'>git add .
+</span><span class='line'>git commit -m 'message'
+</span><span class='line'>git push origin source
+</span></code></pre></td></tr></table></div></figure>
+
+
+<h2>从github上获取最新</h2>
+
+<p>比如在公司发布了一篇博文，回到家里想继续发博文，就需要先将github上的最新代码拉到本地：</p>
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>cd Octopress
+</span><span class='line'>cd _deploy
+</span><span class='line'>git pull origin master
+</span><span class='line'>cd ..
+</span><span class='line'>git pull origin source
+</span></code></pre></td></tr></table></div></figure>
+
+
+<p>今天在家里的另一台电脑上进行生成文章时，发现当执行了命令<code>rake generate</code> 后，生成到public目录中相应的页面为空，没有任何内容，但在命令行中命令还是正常执行了，没有出现异常。最后查出原因是因为Python的安装目录没有添加到环境变量中。所以建议在准备环境时就就将git、ruby、python的安装目录都添加到环境变量中。</p>
+</div>
+
+
+  <footer>
+    <p class="meta">
+      
+  
+
+<span class="byline author vcard">Posted by <span class="fn">冯威</span></span>
+
+      
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2013-08-10T08:54:00+08:00" pubdate data-updated="true">Aug 10<span>th</span>, 2013</time>
+      
+
+<span class="categories">
+  
+    <a class='category' href='/blog/categories/octopress/'>Octopress</a>
+  
+</span>
+
+
+    </p>
+    
+      <div class="sharing">
+  
+  <a href="http://twitter.com/share" class="twitter-share-button" data-url="http://oec2003.github.io/blog/2013/08/10/how-to-use-exist-octopress-in-windows/" data-via="" data-counturl="http://oec2003.github.io/blog/2013/08/10/how-to-use-exist-octopress-in-windows/" >Tweet</a>
+  
+  
+  
+</div>
+
+    
+    <p class="meta">
+      
+        <a class="basic-alignment left" href="/blog/2013/07/13/set-disk-c-for-windows7/" title="Previous Post: Windows7给C盘扩容">&laquo; Windows7给C盘扩容</a>
+      
+      
+    </p>
+  </footer>
+</article>
+
+  <section>
+    <h1>Comments</h1>
+    <div id="disqus_thread" aria-live="polite"><noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+</div>
+  </section>
+
+</div>
+
+<aside class="sidebar">
+  
+    <section>
+  <h1>文章分类</h1>
+  <ul id="categories">
+    <li class='category'><a href='/blog/categories/octopress/'>Octopress (4)</a></li>
+<li class='category'><a href='/blog/categories/jing-yan-zong-jie/'>经验总结 (1)</a></li>
+<li class='category'><a href='/blog/categories/ruan-jian-shi-yong/'>软件使用 (1)</a></li>
+
+  </ul>
+</section><section>
+  <h1>最新文章</h1>
+  <ul id="recent_posts">
+    
+      <li class="post">
+        <a href="/blog/2013/08/10/how-to-use-exist-octopress-in-windows/">Windows中搭建已存在的Octopress环境</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/2013/07/13/set-disk-c-for-windows7/">Windows7给C盘扩容</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/2013/06/26/octopress-blog-setting/">Octopress博客设置</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/2013/05/26/how-to-crate-octopress-blog-in-windows/">Windows下搭建Octopress博客</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/2013/05/22/my-first-blog-for-octopress/">My First Blog for Octopress</a>
+      </li>
+    
+  </ul>
+</section>
+<section>
+    <h1>新浪微博</h1>
+    <ul id="weibo">
+    <li>
+
+    <!-- 在此插入获得的微博秀代码 -->
+	<iframe width="100%" height="550" class="share_self"  frameborder="0" scrolling="no" src="http://widget.weibo.com/weiboshow/index.php?language=&width=0&height=550&fansRow=1&ptype=1&speed=0&skin=2&isTitle=0&noborder=1&isWeibo=1&isFans=1&uid=1022353105&verifier=2addc0d9&dpc=1"></iframe>
+
+      </li>
+    </ul>
+</section>
+
+
+
+
+  
+</aside>
+
+
+    </div>
+  </div>
+  <footer role="contentinfo"><p>
+  Copyright &copy; 2014 - 冯威 -
+  <span class="credit">Powered by <a href="http://octopress.org">Octopress</a></span>
+</p>
+
+</footer>
+  
+
+<script type="text/javascript">
+      var disqus_shortname = 'oec2003';
+      
+        
+        // var disqus_developer = 1;
+        var disqus_identifier = 'http://oec2003.github.io/blog/2013/08/10/how-to-use-exist-octopress-in-windows/';
+        var disqus_url = 'http://oec2003.github.io/blog/2013/08/10/how-to-use-exist-octopress-in-windows/';
+        var disqus_script = 'embed.js';
+      
+    (function () {
+      var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+      dsq.src = 'http://' + disqus_shortname + '.disqus.com/' + disqus_script;
+      (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+    }());
+</script>
+
+
+
+
+
+
+
+  <script type="text/javascript">
+    (function(){
+      var twitterWidgets = document.createElement('script');
+      twitterWidgets.type = 'text/javascript';
+      twitterWidgets.async = true;
+      twitterWidgets.src = 'http://platform.twitter.com/widgets.js';
+      document.getElementsByTagName('head')[0].appendChild(twitterWidgets);
+    })();
+  </script>
+
+
+
+
+
+</body>
+</html>
