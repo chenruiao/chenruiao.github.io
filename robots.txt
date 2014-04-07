@@ -1,4 +1,4 @@
 User-agent: *
 Disallow: 
 
-Sitemap: http://oec2003.github.io/sitemap.xml 
+Sitemap: http://www.chenruiao.com/sitemap.xml 
