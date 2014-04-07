@@ -3,6 +3,7 @@ layout: post
 title: "this is my second blog for test category"
 date: 2014-04-06 20:49
 comments: true
+tag: java
 categories: java
 ---
 - 博文内容
